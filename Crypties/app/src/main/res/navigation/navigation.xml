@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/testFragment">
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.orlik.cryptoapp.TestFragment"
+        android:label="TestFragment" >
+        <action
+            android:id="@+id/action_testFragment_to_toGoFragment"
+            app:destination="@id/toGoFragment" />
+        <action
+            android:id="@+id/action_testFragment_to_oneMoreFragment"
+            app:destination="@id/oneMoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toGoFragment"
+        android:name="com.orlik.cryptoapp.ToGoFragment"
+        android:label="fragment_to_go"
+        tools:layout="@layout/fragment_to_go" />
+    <fragment
+        android:id="@+id/oneMoreFragment"
+        android:name="com.orlik.cryptoapp.OneMoreFragment"
+        android:label="fragment_one_more"
+        tools:layout="@layout/fragment_one_more" />
+</navigation>
