@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/settings_switch"
+    android:paddingLeft="32sp"
+    android:paddingTop="16sp"
+    android:paddingRight="32sp"
+    android:paddingBottom="16sp">
+
+    <TextView
+        android:id="@+id/tv_title_cypher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:text="Chosen cypher"
+        android:textColor="@color/textColorDark"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_start_sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/clickable"
+        android:text="Sync"
+        app:cornerRadius="@dimen/cornerRadius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_deny_cypher" />
+
+    <Button
+        android:id="@+id/btn_deny_cypher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/clickable"
+        android:text="Deny"
+        app:cornerRadius="@dimen/cornerRadius"
+        app:layout_constraintEnd_toStartOf="@+id/btn_start_sync"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_copy" />
+
+    <Button
+        android:id="@+id/btn_copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/clickable"
+        android:text="Copy"
+        app:cornerRadius="@dimen/cornerRadius"
+        app:layout_constraintBaseline_toBaselineOf="@+id/te_output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/te_output" />
+
+    <EditText
+        android:id="@+id/te_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:foregroundTint="@color/textColorDark"
+        android:hint="Output"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/textColorDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_copy"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/te_input" />
+
+    <Button
+        android:id="@+id/btn_paste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/clickable"
+        android:text="Paste"
+        app:cornerRadius="@dimen/cornerRadius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/te_input"
+        app:layout_constraintTop_toBottomOf="@+id/sw_cypher_mode" />
+
+    <EditText
+        android:id="@+id/te_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:foregroundTint="@color/textColorDark"
+        android:hint="Input"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/textColorDark"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_paste"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_paste"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/te_output"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/sw_cypher_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_decypher"
+        app:layout_constraintEnd_toStartOf="@+id/tv_decypher"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_cypher"
+        app:thumbTint="@color/custom_switch_cypher"
+        app:trackTint="@color/custom_switch_track" />
+
+    <TextView
+        android:id="@+id/tv_cypher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:text="Cypher"
+        android:textColor="@color/textColorDark"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_decypher"
+        app:layout_constraintEnd_toStartOf="@+id/sw_cypher_mode"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_decypher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="Decypher"
+        android:textColor="@color/textColorDark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sw_cypher_mode"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_cypher" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

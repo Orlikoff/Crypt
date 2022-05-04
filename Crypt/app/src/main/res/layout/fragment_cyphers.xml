@@ -5,14 +5,129 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/btn_crypto"
+        android:layout_width="166dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/clickable"
+        android:text="CRYPTO"
+        android:textSize="23sp"
+        app:cornerRadius="@dimen/cornerRadius"
+        app:layout_constraintEnd_toStartOf="@+id/btn_rsa"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_caesar" />
+
+    <Button
+        android:id="@+id/btn_rsa"
+        android:layout_width="166dp"
+        android:layout_height="67dp"
+        android:backgroundTint="@color/clickable"
+        android:text="RSA"
+        android:textSize="23sp"
+        app:cornerRadius="@dimen/cornerRadius"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_crypto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_crypto"
+        app:layout_constraintTop_toTopOf="@+id/btn_crypto" />
+
+    <Button
+        android:id="@+id/btn_caesar"
+        android:layout_width="166dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/clickable"
+        android:text="CAESAR"
+        android:textSize="23sp"
+        app:cornerRadius="@dimen/cornerRadius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_vigenere"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_heading_classical" />
+
+    <Button
+        android:id="@+id/btn_vigenere"
+        android:layout_width="166dp"
+        android:layout_height="67dp"
+        android:backgroundTint="@color/clickable"
+        android:text="VIGENERE"
+        android:textSize="23sp"
+        app:cornerRadius="@dimen/cornerRadius"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_caesar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_caesar"
+        app:layout_constraintTop_toTopOf="@+id/btn_caesar" />
+
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_heading_classical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cyphers"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="CLASSICAL CYPHERS"
+        android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sha" />
+
+    <TextView
+        android:id="@+id/tv_title_cyphers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="Cyphers"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_heading_avanced"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="ADVANCED CYPHERS"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_cyphers" />
+
+    <Button
+        android:id="@+id/btn_sha"
+        android:layout_width="166dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/clickable"
+        android:text="SHA-256"
+        android:textSize="23sp"
+        app:cornerRadius="@dimen/cornerRadius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_aes"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_heading_avanced" />
+
+    <Button
+        android:id="@+id/btn_aes"
+        android:layout_width="166dp"
+        android:layout_height="67dp"
+        android:backgroundTint="@color/clickable"
+        android:text="AES-256"
+        android:textSize="23sp"
+        app:cornerRadius="@dimen/cornerRadius"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_sha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_sha"
+        app:layout_constraintTop_toTopOf="@+id/btn_sha"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

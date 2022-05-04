@@ -3,12 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/button_background.xml" value="0.162" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/current_profile_color.xml" value="0.1855" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/dialog_background.xml" value="0.162" />
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_cyphers.xml" value="0.1855" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_cyphers_bg.xml" value="0.162" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_plus.xml" value="0.162" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_profiles.xml" value="0.162" />
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/navigation_backgound.xml" value="0.1855" />
-        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/activity_main.xml" value="0.22644927536231885" />
-        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/fragment_cyphers.xml" value="0.30416666666666664" />
-        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/fragment_profiles.xml" value="0.22644927536231885" />
-        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/fragment_settings.xml" value="0.22644927536231885" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/settings_switch.xml" value="0.162" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/cypher_dialog.xml" value="0.264" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/fragment_cyphers.xml" value="0.264" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/fragment_profiles.xml" value="0.264" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/fragment_settings.xml" value="0.264" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/new_profile_dialog.xml" value="0.264" />
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/menu/bottom_menu.xml" value="0.30416666666666664" />
       </map>
     </option>
