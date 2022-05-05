@@ -11,16 +11,18 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import com.orlik.crypt.R
+import com.orlik.crypt.databinding.CypherDialogBinding
 
 class CypherDialog: DialogFragment() {
-    private lateinit var _view: View
+    private lateinit var _binding: CypherDialogBinding
+    private val binding get() = _binding
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireContext())
-        _view = View.inflate(requireContext(), R.layout.cypher_dialog, null)
-        val dialog = builder.setView(_view).create()
+        _binding = CypherDialogBinding.inflate(layoutInflater, null, false)
+        val dialog = builder.setView(binding.root).create()
 
-        _view.findViewById<Button>(R.id.btn_start_sync).setOnClickListener {
+        binding.btnStartSync.setOnClickListener {
             Toast.makeText(
                 requireContext(),
                 "Hello",
@@ -29,7 +31,7 @@ class CypherDialog: DialogFragment() {
             sendInfo()
             dismiss()
         }
-        _view.findViewById<Button>(R.id.btn_deny_cypher).setOnClickListener { dismiss() }
+        binding.btnDenyCypher.setOnClickListener { dismiss() }
 
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 

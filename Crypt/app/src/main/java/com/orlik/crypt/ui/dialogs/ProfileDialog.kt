@@ -12,17 +12,20 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import com.orlik.crypt.R
+import com.orlik.crypt.databinding.CypherDialogBinding
+import com.orlik.crypt.databinding.NewProfileDialogBinding
 
 class ProfileDialog(): DialogFragment() {
-    private lateinit var _view: View
+    private lateinit var _binding: NewProfileDialogBinding
+    private val binding get() = _binding
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireContext())
-        _view = View.inflate(requireContext(), R.layout.new_profile_dialog, null)
-        val dialog = builder.setView(_view).create()
+        _binding = NewProfileDialogBinding.inflate(layoutInflater, null, false)
+        val dialog = builder.setView(binding.root).create()
 
-        _view.findViewById<Button>(R.id.btn_submit).setOnClickListener { if (sendInfo()) dismiss() }
-        _view.findViewById<Button>(R.id.btn_deny_profile).setOnClickListener { dismiss() }
+        binding.btnSubmit.setOnClickListener { if (sendInfo()) dismiss() }
+        binding.btnDenyProfile.setOnClickListener { dismiss() }
 
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
@@ -30,10 +33,10 @@ class ProfileDialog(): DialogFragment() {
     }
 
     private fun sendInfo(): Boolean{
-        val name = _view.findViewById<EditText>(R.id.te_name).text.toString()
-        val desc = _view.findViewById<EditText>(R.id.te_desk).text.toString()
-        val code = _view.findViewById<EditText>(R.id.te_code).text.toString()
-        val hex = _view.findViewById<EditText>(R.id.te_hex).text.toString()
+        val name = binding.teName.text.toString()
+        val desc = binding.teDesk.text.toString()
+        val code = binding.teCode.text.toString()
+        val hex = binding.teHex.text.toString()
 
         for (item in arrayListOf<String>(name, desc, code, hex))
             if (item == ""){
