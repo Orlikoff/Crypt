@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.FragmentResultListener
 import com.orlik.crypt.ui.dialogs.CypherDialog
 import com.orlik.crypt.databinding.FragmentCyphersBinding
 
@@ -33,10 +32,9 @@ class CyphersFragment : Fragment() {
 
     private fun listenCyphersDialog() {
         parentFragmentManager.setFragmentResultListener(
-            CypherDialog.REQUEST_KEY, this,
-            FragmentResultListener {_, result ->
-                Toast.makeText(requireContext(), "Here we go again", Toast.LENGTH_SHORT).show()
-            }
-        )
+            CypherDialog.REQUEST_KEY, this
+        ) { _, _ ->
+            Toast.makeText(requireContext(), "Here we go again", Toast.LENGTH_SHORT).show()
+        }
     }
 }

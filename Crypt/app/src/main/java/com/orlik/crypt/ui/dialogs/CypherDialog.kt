@@ -5,12 +5,9 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
-import com.orlik.crypt.R
 import com.orlik.crypt.databinding.CypherDialogBinding
 
 class CypherDialog: DialogFragment() {
@@ -23,11 +20,7 @@ class CypherDialog: DialogFragment() {
         val dialog = builder.setView(binding.root).create()
 
         binding.btnStartSync.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "Hello",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast.makeText(requireContext(), "Hello", Toast.LENGTH_SHORT).show()
             sendInfo()
             dismiss()
         }
@@ -38,9 +31,8 @@ class CypherDialog: DialogFragment() {
         return dialog
     }
 
-    private fun sendInfo() {
+    private fun sendInfo() =
         parentFragmentManager.setFragmentResult(REQUEST_KEY, bundleOf("ass" to 123))
-    }
 
     companion object {
         const val TAG = "CyphersDialog"

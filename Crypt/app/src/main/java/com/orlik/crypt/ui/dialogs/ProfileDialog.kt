@@ -5,17 +5,12 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
-import com.orlik.crypt.R
-import com.orlik.crypt.databinding.CypherDialogBinding
 import com.orlik.crypt.databinding.NewProfileDialogBinding
 
-class ProfileDialog(): DialogFragment() {
+class ProfileDialog: DialogFragment() {
     private lateinit var _binding: NewProfileDialogBinding
     private val binding get() = _binding
 
@@ -38,11 +33,12 @@ class ProfileDialog(): DialogFragment() {
         val code = binding.teCode.text.toString()
         val hex = binding.teHex.text.toString()
 
-        for (item in arrayListOf<String>(name, desc, code, hex))
-            if (item == ""){
+        for (item in arrayListOf(name, desc, code, hex)) {
+            if (item.isEmpty()){
                 Toast.makeText(requireContext(), "Fill all the fields!", Toast.LENGTH_SHORT).show()
                 return false
             }
+        }
 
         parentFragmentManager.setFragmentResult(
             REQUEST_KEY, bundleOf(
