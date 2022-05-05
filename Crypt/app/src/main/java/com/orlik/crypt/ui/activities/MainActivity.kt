@@ -1,15 +1,12 @@
-package com.orlik.crypt
+package com.orlik.crypt.ui.activities
 
-import android.app.StatusBarManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.orlik.crypt.R
 import com.orlik.crypt.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

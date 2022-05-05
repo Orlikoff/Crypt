@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/cyphersFragment"
-        android:name="com.orlik.crypt.CyphersFragment"
+        android:name="com.orlik.crypt.ui.fragments.CyphersFragment"
         android:label="fragment_cyphers"
         tools:layout="@layout/fragment_cyphers" />
     <fragment
         android:id="@+id/profilesFragment"
-        android:name="com.orlik.crypt.ProfilesFragment"
+        android:name="com.orlik.crypt.ui.fragments.ProfilesFragment"
         android:label="fragment_profiles"
         tools:layout="@layout/fragment_profiles" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.orlik.crypt.SettingsFragment"
+        android:name="com.orlik.crypt.ui.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

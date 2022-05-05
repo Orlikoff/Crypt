@@ -1,12 +1,13 @@
-package com.orlik.crypt
+package com.orlik.crypt.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.orlik.crypt.R
 
-class CyphersFragment : Fragment() {
+class SettingsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -16,6 +17,6 @@ class CyphersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cyphers, container, false)
+        return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 }

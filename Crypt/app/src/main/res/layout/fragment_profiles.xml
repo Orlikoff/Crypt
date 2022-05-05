@@ -42,11 +42,23 @@
                 android:background="@drawable/settings_switch">
 
                 <Button
+                    android:id="@+id/btn_remove_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/clickable"
+                    android:text="Remove"
+                    app:cornerRadius="@dimen/cornerRadius"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
                     android:id="@+id/btn_choose_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/clickable"
                     android:text="Choose"
                     app:cornerRadius="@dimen/cornerRadius"
