@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.orlik.crypt.R
 import com.orlik.crypt.databinding.ActivityMainBinding
+import com.orlik.crypt.ui.synchronizer.Synchronizer
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -32,5 +33,8 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = binding.bottomNavView
         val navController = findNavController(R.id.fragmentContainerView)
         bottomNavigationView.setupWithNavController(navController)
+
+        // Synchronizer setup
+        val synchronizer = Synchronizer(binding.ivCurrentProfile)
     }
 }
