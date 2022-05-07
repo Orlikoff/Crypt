@@ -16,10 +16,7 @@ import com.orlik.crypt.data.api.Requester
 import com.orlik.crypt.databinding.CypherDialogBinding
 import com.orlik.crypt.ui.synchronizer.Synchronizer
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import kotlin.coroutines.coroutineContext
 
 class CypherDialog(private val cypher: String): DialogFragment() {
     private lateinit var _binding: CypherDialogBinding
@@ -41,19 +38,23 @@ class CypherDialog(private val cypher: String): DialogFragment() {
         result.observe(this, outputObserver)
 
         binding.btnStartSync.setOnClickListener {
-            if (Synchronizer.getCurrentProfile() == null){
-                Toast.makeText(requireContext(), "Choose the profile!", Toast.LENGTH_SHORT).show()
-            }
-            else {
-                Toast.makeText(requireContext(), "Wait...", Toast.LENGTH_SHORT).show()
-                lifecycleScope.launch(Dispatchers.Main) {
-                    tempResult = sendInfo()
-                }.invokeOnCompletion {
-                    if (tempResult != null){
-                        result.postValue(tempResult!!)
-                    }
-                    else {
-                        Toast.makeText(requireContext(), "Empty result!", Toast.LENGTH_SHORT).show()
+            when {
+                Synchronizer.getCurrentProfile() == null -> {
+                    Toast.makeText(requireContext(), "Choose the profile!", Toast.LENGTH_SHORT).show()
+                }
+                binding.teInput.text.toString().isEmpty() -> {
+                    Toast.makeText(requireContext(), "Fill the input!", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    Toast.makeText(requireContext(), "Wait...", Toast.LENGTH_SHORT).show()
+                    lifecycleScope.launch(Dispatchers.IO) {
+                        tempResult = sendInfo()
+                    }.invokeOnCompletion {
+                        if (tempResult != null){
+                            result.postValue(tempResult!!)
+                        } else {
+                            Toast.makeText(requireContext(), "Empty result!", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
             }
