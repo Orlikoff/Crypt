@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import com.orlik.crypt.databinding.NewProfileDialogBinding
+import java.lang.Exception
 
 class ProfileDialog: DialogFragment() {
     private lateinit var _binding: NewProfileDialogBinding
@@ -31,7 +32,15 @@ class ProfileDialog: DialogFragment() {
         val name = binding.teName.text.toString()
         val desc = binding.teDesk.text.toString()
         val code = binding.teCode.text.toString()
-        val hex = binding.teHex.text.toString()
+        val hex = "#"+binding.teHex.text.toString()
+
+        try {
+            val c = Color.parseColor(hex)
+        }
+        catch(e: Exception) {
+            Toast.makeText(requireContext(), "Wrong color!", Toast.LENGTH_SHORT).show()
+            return false
+        }
 
         for (item in arrayListOf(name, desc, code, hex)) {
             if (item.isEmpty()){

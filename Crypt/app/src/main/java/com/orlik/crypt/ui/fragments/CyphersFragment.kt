@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.orlik.crypt.ui.dialogs.CypherDialog
 import com.orlik.crypt.databinding.FragmentCyphersBinding
 
@@ -19,22 +18,13 @@ class CyphersFragment : Fragment() {
     ): View {
         _binding = FragmentCyphersBinding.inflate(inflater, container, false)
 
-        binding.btnSha.setOnClickListener { openCyphersDialog() }
-
-        listenCyphersDialog()
+        binding.btnSha.setOnClickListener { openCyphersDialog("SHA") }
+        binding.btnCaesar.setOnClickListener { openCyphersDialog("CAESAR") }
 
         return binding.root
     }
 
-    private fun openCyphersDialog(){
-        CypherDialog().show(parentFragmentManager, CypherDialog.TAG)
-    }
-
-    private fun listenCyphersDialog() {
-        parentFragmentManager.setFragmentResultListener(
-            CypherDialog.REQUEST_KEY, this
-        ) { _, _ ->
-            Toast.makeText(requireContext(), "Here we go again", Toast.LENGTH_SHORT).show()
-        }
+    private fun openCyphersDialog(cypher: String){
+        CypherDialog(cypher).show(parentFragmentManager, CypherDialog.TAG)
     }
 }

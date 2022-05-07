@@ -1,5 +1,6 @@
 package com.orlik.crypt.ui.activities
 
+import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -35,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
         // Synchronizer setup
-        val synchronizer = Synchronizer(binding.ivCurrentProfile)
+        Synchronizer.setupColorSetter {
+            binding.ivCurrentProfile.setColorFilter(Color.parseColor(it))
+        }
     }
 }

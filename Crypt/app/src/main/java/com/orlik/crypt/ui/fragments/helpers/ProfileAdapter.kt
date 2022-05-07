@@ -2,19 +2,17 @@ package com.orlik.crypt.ui.fragments.helpers
 
 import android.content.Context
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.orlik.crypt.R
-import com.orlik.crypt.data.Profile
+import com.orlik.crypt.data.profile.ProfileEntity
 import com.orlik.crypt.databinding.ProfileItemBinding
+import com.orlik.crypt.ui.synchronizer.Synchronizer
 
-class ProfileAdapter(private val context: Context, private val profiles: List<Profile>):
+class ProfileAdapter(private val context: Context, private var profiles: ArrayList<ProfileEntity>?):
     RecyclerView.Adapter<ProfileAdapter.ViewHolder>() {
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
@@ -26,7 +24,7 @@ class ProfileAdapter(private val context: Context, private val profiles: List<Pr
         val btnChoose = binding.btnChooseProfile
     }
 
-    override fun getItemCount() = profiles.size
+    override fun getItemCount() = profiles?.size ?: 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -39,17 +37,39 @@ class ProfileAdapter(private val context: Context, private val profiles: List<Pr
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val profile = profiles[position]
+        if (itemCount == 0) return
+        val profile = profiles!![position]
 
         holder.tvName.text = profile.name
         holder.tvDescription.text = profile.desc
         holder.ivProfileColor.setColorFilter(Color.parseColor(profile.hex))
+
         holder.btnChoose.setOnClickListener {
-            Toast.makeText(context, "${profile.id} chosen", Toast.LENGTH_SHORT).show()
+            Synchronizer.setCurrentProfile(profile)
+            Toast.makeText(context, "${profile.name} has been chosen", Toast.LENGTH_SHORT)
+                .show()
         }
         holder.btnRemove.setOnClickListener {
-            Toast.makeText(context, "${profile.id} removed", Toast.LENGTH_SHORT).show()
+            removeProfile(profile)
+            Synchronizer.removeProfile(profile)
+            Toast.makeText(context, "${profile.name} has been removed", Toast.LENGTH_SHORT)
+                .show()
         }
+    }
+
+    fun addProfile(profile: ProfileEntity) {
+        if (profiles == null){
+            profiles = ArrayList(0)
+        }
+        profiles!!.add(profile)
+        notifyItemInserted(profiles!!.size)
+    }
+
+    private fun removeProfile(profile: ProfileEntity){
+        if (profiles == null || profiles?.size == 0) return
+        val index = profiles!!.indexOf(profile)
+        profiles!!.remove(profile)
+        notifyItemRemoved(index)
     }
 
 }

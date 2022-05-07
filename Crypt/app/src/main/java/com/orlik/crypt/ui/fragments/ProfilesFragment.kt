@@ -6,20 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.orlik.crypt.data.Profile
-import com.orlik.crypt.data.ProfilesViewModel
+import com.orlik.crypt.data.profile.ProfileEntity
+import com.orlik.crypt.data.profile.ProfilesViewModel
 import com.orlik.crypt.ui.dialogs.ProfileDialog
 import com.orlik.crypt.databinding.FragmentProfilesBinding
 import com.orlik.crypt.ui.fragments.helpers.ProfileAdapter
+import com.orlik.crypt.ui.synchronizer.Synchronizer
 
 class ProfilesFragment : Fragment() {
     private lateinit var _binding: FragmentProfilesBinding
     private lateinit var layoutManager: LinearLayoutManager
     private val binding get() = _binding
+    private lateinit var profileAdapter: ProfileAdapter
+
+    private lateinit var mProfileViewModel: ProfilesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,18 +39,16 @@ class ProfilesFragment : Fragment() {
         // RecyclerView setup
         layoutManager = LinearLayoutManager(requireContext())
         binding.rvProfiles.layoutManager = layoutManager
-        // TODO: Change to database synchronization
-        val profileAdapter = ProfileAdapter(requireContext(), (1..15).map {
-            Profile(
-                id = it,
-                name = "Name of $it",
-                desc = "Description of $it",
-                code = "Code of $it",
-                hex = "#AABBCC"
-            )
-        })
+
+        // viewModel setup
+        mProfileViewModel = ViewModelProvider(this).get(ProfilesViewModel::class.java)
+        Synchronizer.setupProfileRemover {
+            mProfileViewModel.removeProfile(it)
+        }
+
+        profileAdapter = ProfileAdapter(requireContext(), ArrayList(mProfileViewModel.getProfiles()))
         binding.rvProfiles.adapter = profileAdapter
-        // fab hide/show animation
+
         binding.rvProfiles.addOnScrollListener(object: RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
@@ -62,18 +63,6 @@ class ProfilesFragment : Fragment() {
 
         listenProfileDialog()
 
-        // viewModel setup
-        val profileModel = ViewModelProvider(requireActivity()).get(ProfilesViewModel::class.java)
-        val data = profileModel.getData()
-        data.observe(viewLifecycleOwner, Observer {
-            // TODO: Here update the views (RecyclerView)
-            Toast.makeText(
-                requireContext(),
-                "Data has been updated",
-                Toast.LENGTH_SHORT
-            ).show()
-        })
-
         return binding.root
     }
 
@@ -85,12 +74,19 @@ class ProfilesFragment : Fragment() {
         parentFragmentManager.setFragmentResultListener(
             ProfileDialog.REQUEST_KEY, this
         ) { _, result ->
-            val name = result.get("name")
-            val desk = result.get("desc")
-            // TODO: Implement database here
-//            val code = result.get("code")
-//            val hex = result.get("hex")
-            Toast.makeText(requireContext(), "$name <-> $desk", Toast.LENGTH_LONG).show()
+            val profile = ProfileEntity(
+                0,
+                result.get("name").toString(),
+                result.get("desc").toString(),
+                result.get("code").toString(),
+                result.get("hex").toString()
+            )
+
+            mProfileViewModel.addProfile(profile)
+            profileAdapter.addProfile(profile)
+
+            Toast.makeText(requireContext(), "Profile has been added", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 }
