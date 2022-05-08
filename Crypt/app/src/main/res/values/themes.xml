@@ -1,6 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Crypt" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-
+        <item name="navBg">@color/navBgLIGHT</item>
+        <item name="navActive">@color/navActiveLIGHT</item>
+        <item name="navNotActive">@color/navNotActiveLIGHT</item>
+        <item name="clickable">@color/clickableLIGHT</item>
+        <item name="textColorLight">@color/textColorLightLIGHT</item>
+        <item name="textColorDark">@color/textColorDarkLIGHT</item>
+        <item name="sliderBg">@color/sliderBgLIGHT</item>
+        <item name="sliderActive">@color/sliderActiveLIGHT</item>
+        <item name="sliderNotActive">@color/sliderNotActiveLIGHT</item>
+        <item name="tempProfileColor">@color/tempProfileColorLIGHT</item>
+        <item name="middleton">@color/middletonLIGHT</item>
+        <item name="mainActivityBg">@color/mainActivityBgLIGHT</item>
+        <item name="imageBg">@color/imageBgLIGHT</item>
     </style>
+
 </resources>

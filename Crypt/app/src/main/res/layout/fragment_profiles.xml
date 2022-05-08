@@ -13,6 +13,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/lato_bold"
         android:text="Profiles"
+        android:textColor="?attr/textColorDark"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +39,7 @@
         android:clickable="true"
         android:contentDescription="Add new profile"
         android:focusable="true"
-        app:backgroundTint="@color/clickable"
+        app:backgroundTint="?attr/clickable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_plus"

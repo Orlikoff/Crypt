@@ -18,8 +18,10 @@ class CyphersFragment : Fragment() {
     ): View {
         _binding = FragmentCyphersBinding.inflate(inflater, container, false)
 
-        binding.btnSha.setOnClickListener { openCyphersDialog("SHA") }
+        binding.btnAes256.setOnClickListener { openCyphersDialog("AES256") }
+        binding.btnAes192.setOnClickListener { openCyphersDialog("AES192") }
         binding.btnCaesar.setOnClickListener { openCyphersDialog("CAESAR") }
+        binding.btnVigenere.setOnClickListener { openCyphersDialog("VIGENERE") }
 
         return binding.root
     }

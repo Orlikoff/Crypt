@@ -6,39 +6,11 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btn_crypto"
-        android:layout_width="166dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/clickable"
-        android:text="CRYPTO"
-        android:textSize="23sp"
-        app:cornerRadius="@dimen/cornerRadius"
-        app:layout_constraintEnd_toStartOf="@+id/btn_rsa"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_caesar" />
-
-    <Button
-        android:id="@+id/btn_rsa"
-        android:layout_width="166dp"
-        android:layout_height="67dp"
-        android:backgroundTint="@color/clickable"
-        android:text="RSA"
-        android:textSize="23sp"
-        app:cornerRadius="@dimen/cornerRadius"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_crypto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_crypto"
-        app:layout_constraintTop_toTopOf="@+id/btn_crypto" />
-
-    <Button
         android:id="@+id/btn_caesar"
         android:layout_width="166dp"
         android:layout_height="67dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/clickable"
+        android:backgroundTint="?attr/clickable"
         android:text="CAESAR"
         android:textSize="23sp"
         app:cornerRadius="@dimen/cornerRadius"
@@ -52,7 +24,7 @@
         android:id="@+id/btn_vigenere"
         android:layout_width="166dp"
         android:layout_height="67dp"
-        android:backgroundTint="@color/clickable"
+        android:backgroundTint="?attr/clickable"
         android:text="VIGENERE"
         android:textSize="23sp"
         app:cornerRadius="@dimen/cornerRadius"
@@ -69,11 +41,12 @@
         android:layout_marginTop="44dp"
         android:fontFamily="@font/lato_bold"
         android:text="CLASSICAL CYPHERS"
+        android:textColor="?attr/textColorDark"
         android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sha" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_aes256" />
 
     <TextView
         android:id="@+id/tv_title_cyphers"
@@ -83,6 +56,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/lato_bold"
         android:text="Cyphers"
+        android:textColor="?attr/textColorDark"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -94,6 +68,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/lato_bold"
         android:text="ADVANCED CYPHERS"
+        android:textColor="?attr/textColorDark"
         android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -101,33 +76,33 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_title_cyphers" />
 
     <Button
-        android:id="@+id/btn_sha"
+        android:id="@+id/btn_aes256"
         android:layout_width="166dp"
         android:layout_height="67dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/clickable"
-        android:text="SHA-256"
+        android:backgroundTint="?attr/clickable"
+        android:text="AES-256"
         android:textSize="23sp"
         app:cornerRadius="@dimen/cornerRadius"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_aes"
+        app:layout_constraintEnd_toStartOf="@+id/btn_aes192"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_heading_avanced" />
 
     <Button
-        android:id="@+id/btn_aes"
+        android:id="@+id/btn_aes192"
         android:layout_width="166dp"
         android:layout_height="67dp"
-        android:backgroundTint="@color/clickable"
-        android:text="AES-256"
+        android:backgroundTint="?attr/clickable"
+        android:text="AES-192"
         android:textSize="23sp"
         app:cornerRadius="@dimen/cornerRadius"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_sha"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_aes256"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_sha"
-        app:layout_constraintTop_toTopOf="@+id/btn_sha"
+        app:layout_constraintStart_toEndOf="@+id/btn_aes256"
+        app:layout_constraintTop_toTopOf="@+id/btn_aes256"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

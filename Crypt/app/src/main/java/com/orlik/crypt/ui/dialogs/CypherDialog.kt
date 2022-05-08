@@ -2,13 +2,14 @@ package com.orlik.crypt.ui.dialogs
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context.CLIPBOARD_SERVICE
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
@@ -33,6 +34,25 @@ class CypherDialog(private val cypher: String): DialogFragment() {
 
         val outputObserver = Observer<String>{
             binding.teOutput.setText(it)
+        }
+
+        binding.btnCopy.setOnClickListener {
+            val clipboard = requireActivity().getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+            val clipData = ClipData.newPlainText(
+                "data",
+                binding.teOutput.text.toString()
+            )
+            clipboard.setPrimaryClip(clipData)
+            Toast.makeText(requireContext(), "Copied!", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnPaste.setOnClickListener {
+            var pastedData = ""
+            val clipboard = requireActivity().getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+            if (clipboard.hasPrimaryClip()){
+                pastedData = clipboard.primaryClip?.getItemAt(0)?.text.toString()
+            }
+            binding.teInput.setText(pastedData)
         }
 
         result.observe(this, outputObserver)
@@ -70,7 +90,8 @@ class CypherDialog(private val cypher: String): DialogFragment() {
         return Requester.performRequest(
             cypher,
             binding.teInput.text.toString(),
-            binding.swCypherMode.isChecked
+            binding.swCypherMode.isChecked,
+            requireContext()
         )
     }
 

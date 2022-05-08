@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="navBg">#60740F</color>
-    <color name="navActive">#FFFFFF</color>
-    <color name="navNotActive">#48570A</color>
-    <color name="clickable">#B85C5C</color>
-    <color name="textColorLight">#FFFFFF</color>
-    <color name="textColorDark">#3A4703</color>
-    <color name="sliderBg">#B4CC54</color>
-    <color name="sliderActive">#B85C5C</color>
-    <color name="sliderNotActive">#FFFFFF</color>
-    <color name="tempProfileColor">#FB6E08</color>
-    <color name="middleton">#CAE363</color>
+    <color name="navBgLIGHT">#60740F</color>
+    <color name="navActiveLIGHT">#FFFFFF</color>
+    <color name="navNotActiveLIGHT">#48570A</color>
+    <color name="clickableLIGHT">#B85C5C</color>
+    <color name="textColorLightLIGHT">#FFFFFF</color>
+    <color name="textColorDarkLIGHT">#3A4703</color>
+    <color name="sliderBgLIGHT">#B4CC54</color>
+    <color name="sliderActiveLIGHT">#B85C5C</color>
+    <color name="sliderNotActiveLIGHT">#FFFFFF</color>
+    <color name="tempProfileColorLIGHT">#FB6E08</color>
+    <color name="middletonLIGHT">#CAE363</color>
+    <color name="mainActivityBgLIGHT">#FFFFFF</color>
+    <color name="imageBgLIGHT">#EDFDAE</color>
+
+    <color name="navBgDARK">#003246</color>
+    <color name="navActiveDARK">#00b4d8</color>
+    <color name="navNotActiveDARK">#006978</color>
+    <color name="clickableDARK">#ffb703</color>
+    <color name="textColorLightDARK">#00b4d8</color>
+    <color name="textColorDarkDARK">#3399FF</color>
+    <color name="sliderBgDARK">#03045e</color>
+    <color name="sliderActiveDARK">#fb8500</color>
+    <color name="sliderNotActiveDARK">#219ebc</color>
+    <color name="tempProfileColorDARK">#FB6E08</color>
+    <color name="middletonDARK">#0055a6</color>
+    <color name="mainActivityBgDARK">#001214</color>
+    <color name="imageBgDARK">#005070</color>
 </resources>

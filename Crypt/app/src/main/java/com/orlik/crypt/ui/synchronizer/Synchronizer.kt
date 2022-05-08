@@ -9,6 +9,7 @@ class Synchronizer {
         private var currentProfile: ProfileEntity? = null
         private var colorSetter: ((String) -> Unit)? = null
         private var profileRemover: ((ProfileEntity) -> Unit)? = null
+        var darkTheme = false
 
         fun getInstance(): Synchronizer{
             if (INSTANCE == null){

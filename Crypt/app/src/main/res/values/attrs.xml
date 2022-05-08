@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="themeColors">
+        <attr name="navBg" format="color"/>
+        <attr name="navActive" format="color"/>
+        <attr name="navNotActive" format="color"/>
+        <attr name="clickable" format="color"/>
+        <attr name="textColorLight" format="color"/>
+        <attr name="textColorDark" format="color"/>
+        <attr name="sliderBg" format="color"/>
+        <attr name="sliderActive" format="color"/>
+        <attr name="sliderNotActive" format="color"/>
+        <attr name="tempProfileColor" format="color"/>
+        <attr name="middleton" format="color"/>
+        <attr name="mainActivityBg" format="color"/>
+        <attr name="imageBg" format="color"/>
+    </declare-styleable>
+</resources>
