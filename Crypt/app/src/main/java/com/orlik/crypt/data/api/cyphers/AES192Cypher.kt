@@ -1,6 +1,5 @@
 package com.orlik.crypt.data.api.cyphers
 
-import android.content.Context
 import android.widget.Toast
 import com.orlik.crypt.data.api.CypherRequest
 import com.orlik.crypt.data.api.Requester
@@ -8,11 +7,10 @@ import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
-import java.io.IOException
 import java.lang.Exception
 
 class AES192Cypher: CypherRequest {
-    override fun getResultFromServer(data: String, mode: Boolean, context: Context): String {
+    override fun getResultFromServer(data: String, mode: Boolean): String {
         val client = OkHttpClient()
 
         val mediaType = "application/json".toMediaTypeOrNull()
@@ -36,7 +34,6 @@ class AES192Cypher: CypherRequest {
         }
 
         if (response == null){
-            Toast.makeText(context, "Request failure", Toast.LENGTH_SHORT).show()
             return ""
         }
 

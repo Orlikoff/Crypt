@@ -1,17 +1,15 @@
 package com.orlik.crypt.data.api.cyphers
 
-import android.content.Context
 import android.widget.Toast
 import com.orlik.crypt.data.api.CypherRequest
 import com.orlik.crypt.data.api.Requester
 import com.orlik.crypt.ui.synchronizer.Synchronizer
 import okhttp3.*
 import org.json.JSONObject
-import java.io.IOException
 import java.lang.Exception
 
 class CaesarCypher: CypherRequest {
-    override fun getResultFromServer(data: String, mode: Boolean, context: Context): String {
+    override fun getResultFromServer(data: String, mode: Boolean): String {
         val shifts = Synchronizer.getCurrentProfile()?.code.hashCode()
         val client = OkHttpClient()
 
@@ -32,7 +30,6 @@ class CaesarCypher: CypherRequest {
         }
 
         if (response == null){
-            Toast.makeText(context, "Request failure", Toast.LENGTH_SHORT).show()
             return ""
         }
 

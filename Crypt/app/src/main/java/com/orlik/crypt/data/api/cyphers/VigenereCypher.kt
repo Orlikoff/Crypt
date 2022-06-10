@@ -1,7 +1,5 @@
 package com.orlik.crypt.data.api.cyphers
 
-import android.content.Context
-import android.widget.Toast
 import com.orlik.crypt.data.api.CypherRequest
 import com.orlik.crypt.data.api.Requester
 import com.orlik.crypt.ui.synchronizer.Synchronizer
@@ -12,7 +10,7 @@ import org.json.JSONObject
 import java.lang.Exception
 
 class VigenereCypher: CypherRequest {
-    override fun getResultFromServer(data: String, mode: Boolean, context: Context): String {
+    override fun getResultFromServer(data: String, mode: Boolean): String {
         val key = Synchronizer.getCurrentProfile()?.code.hashCode()
         val client = OkHttpClient()
 
@@ -32,8 +30,7 @@ class VigenereCypher: CypherRequest {
             null
         }
 
-        if (response == null){
-            Toast.makeText(context, "Request failure", Toast.LENGTH_SHORT).show()
+        if (response == null || !response.isSuccessful){
             return ""
         }
 

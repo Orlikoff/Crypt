@@ -11,6 +11,7 @@
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_cyphers.xml" value="0.1855" />
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_cyphers_bg.xml" value="0.162" />
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1715" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_lock_svgrepo_com.xml" value="0.1715" />
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_plus.xml" value="0.162" />
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_profiles.xml" value="0.162" />
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/drawable/ic_settings.xml" value="0.1715" />
@@ -25,6 +26,8 @@
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/new_profile_dialog.xml" value="0.264" />
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/layout/profile_item.xml" value="0.4" />
         <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/menu/bottom_menu.xml" value="0.30416666666666664" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.156" />
+        <entry key="..\:/Users/Orlik/Desktop/CryptoApp/Crypt/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1715" />
       </map>
     </option>
   </component>

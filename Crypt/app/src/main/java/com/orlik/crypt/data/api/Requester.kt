@@ -18,8 +18,7 @@ class Requester {
                 "AES256" -> AES256Cypher()
                 else -> AES192Cypher()
             }
-            return cypherClass.getResultFromServer(data, mode, context)
+            return cypherClass.getResultFromServer(data, mode)
         }
     }
-
 }
